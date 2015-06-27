@@ -1,3 +1,7 @@
+// To compile:
+//     gcc -o input input.c
+// To run:
+//     ./input x y z
 #include <stdio.h>
 
 int main(int argc, char**argv) {

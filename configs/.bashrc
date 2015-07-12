@@ -2,6 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export JAVA_HOME=/usr/lib/jvm/jdk1.7.0
+#export PATH="$PATH:$HOME/bazel/output"
+export PATH="$PATH:$HOME/.bin"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -113,3 +117,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Mount /dev/sda2 if it's not mounted
+if [ ! -d "$HOME/Data/Jeff" ]; then
+  sudo mount -t ntfs /dev/sda2 "$HOME/Data"
+  # sudo umount "$HOME/Data"
+  cp ~/.config/user-dirs.dirs.jeff ~/.config/user-dirs.dirs
+  xdg-user-dirs-update
+fi
+

@@ -52,24 +52,39 @@ endif
 " Auto manage runtimepath under ~/.vim/bundle
 " execute pathogen#infect()
 
-" Required!
-filetype off
-
-" call vundle#rc()
-
-" Required!
-" Bundle 'gmarik/vundle'
-
-" Personal plugins
-" Bundle 'ervandew/supertab'
-" Bundle 'FuzzyFinder'
-" Bundle 'scrooloose/nerdcommenter'
-" Bundle 'kien/ctrlp.vim'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'tpope/vim-fugitive'
-
 " required
-filetype plugin indent on
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Customized plugin
+" Plugin 'benmills/vimux'  " this is replaced by vimi-slime
+" Plugin 'julienr/vimux-pyutils'
+Plugin 'jpalardy/vim-slime'
+" Plugin 'Valloric/YouCompleteMe' " this is too complex to be used.
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 "==============================================================================
 " Basic Settings
@@ -100,3 +115,5 @@ set spell
 " Personal Settings
 "==============================================================================
 set nocompatible
+
+let g:slime_target = "tmux"

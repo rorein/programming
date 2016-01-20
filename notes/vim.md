@@ -1,10 +1,11 @@
+# Notes on learning/using vim
 
-# Created a new filetype (syntax)
+## Created a new filetype
 ```
 :help new-filetype
 ```
 
-# References
+## References
 * [Vim document](http://vimdoc.sourceforge.net/htmldoc/syntax.html)
 
 汉字乱码

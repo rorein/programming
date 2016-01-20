@@ -25,59 +25,18 @@
 * git commit -m "a test." # **g4 change**
 * git commit --amend
 * git push -u origin master # **g4 submit**
+* git push --repo=name origin master
 
 ### Others
 * check the commit (change list): *git status* # **g4 pending**
 * list remote names: *git remote -v* # **g4 list**
 * move a file: *git mv MarkDown.md notes/*
-
-vim .gitignore
-git log
-git checkout
-git add to_be_deleted.txt 
-git checkout
-git commit -m "First message"
-git add another_test.txt 
-git checkout
-git status
-git commit -m "second message"
-git log --oneline
-git reset HEAD~2
-git add .gitignore 
-vim .gitignore
-git add .gitignore 
-git commit -m "add .gitignore"
-git log
-git clean -df
-git checkout master
-git fetch origin master
-git rebase -i origin/master
-git status
-git log
-git push origin master
-git remote add name https://github.com/dreamingbird88/kaggle/
-git push --repo=name origin master
-git rm another_test.txt 
-git commit -m "Delete another_test.txt"
-git log
-git status
-git push --repo=name origin master
-git rm to_be_deleted.txt 
-git status
-git commit -m "delete to_be_deleted.txt"
-git status
-git log --oneline
-git revert 17a722c
-git log --oneline
-git reset f0f78c4
-git log --oneline
-git reset b6cdb5c
-git log --oneline
-git status
-git push --repo=name origin master
-git push programming master 
-git checkout bcbef3e configs/.bashrc
-git checkout bcbef3e 
-git revert bcbef3e
-git reset bcbef3e
-
+* delete a file: *git rm to_be_deleted.txt*
+* show commit log: *git log __--oneline__*
+* sync with master: *git checkout __{commit_number}__ __{path}__* # **g4 sync**
+* git revert bcbef3e
+* git reset bcbef3e *or* git reset HEAD~2
+* remove untracked files/directories from the working tree: *git clean -df*
+* git rebase -i origin/master
+* download objects and refs from another repository: *git fetch origin master* 
+* vim .gitignore

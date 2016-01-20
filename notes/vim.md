@@ -1,49 +1,12 @@
 
-Created a new filetype (syntax)
-汉字乱码
-Normal Mode
-Range + Motion
-Cursor/Screen
-Marks & Jumps
-Buffers/Windows
-Change list
-Arguments/Windows
-Tabs/Windows
-T41: :edit %:h<Tab>
-Operator + Motion = Action (T12)
-Simple calculation (T10 only for numbers)
-Open command-line window: history of searches/Ex commands
-Insert Mode
-Insert unusual character
-redirect output
-Visual Mode -- for one-off changes
-Command Mode
-Selection + Offset
-Action + Position
-Normal Mode command
-Envioement
-Shell command (T35)
-Read/write files
-Mapping Keys/Command
-Open files
-Register
-Paste with register/variable/integer calculation
-Macro Record
-Vim Functions
-Variables
-Search/Replace + Regular Expression
-Q&A
-Plugins
-Plugin Manager -- Vbundle
-vim-slime
-YouCompleteMe → to complex
-index
-vimdiff
-
-
-Created a new filetype (syntax)
+# Created a new filetype (syntax)
+```
 :help new-filetype
-http://vimdoc.sourceforge.net/htmldoc/syntax.html
+```
+
+# References
+* [Vim document](http://vimdoc.sourceforge.net/htmldoc/syntax.html)
+
 汉字乱码
 in vimrc: set fileencodings=utf-8,gbk,ucs-bom,cp936
 Normal Mode

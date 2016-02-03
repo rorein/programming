@@ -23,8 +23,8 @@ g + <Ctr+g>
 ## Range + Motion
 
 Range | letter | line | cursors to end
-Command | lower | upper |  
 --------- |---------------| -------------------- | ----
+Command | lower | upper |  
 insert front | i | I
 insert back | a | A
 substitute |  s  | S | 
@@ -40,12 +40,9 @@ change case | g~ | g~~ |
 
 
 character | word | sentence | paragraph
-```
 c | w | s | p
-```
 
 function | forward | backward
-```
 insert letter | a | i
 append line | o | O
 paste | p | P
@@ -54,13 +51,10 @@ search  before | t | T
 follow | ; | ,
 delete char | x | X 
 command mode search | / | ?
-```
 
 within | whole
-```
 i | a
 da) |  di)
-```
 
 T9: Compose reusable changes
 delete a word: daw [best], dbx, bdw BECAUSE . command after is: daw, x, dw

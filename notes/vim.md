@@ -5,40 +5,62 @@
 :help new-filetype
 ```
 
-## References
-* [Vim document](http://vimdoc.sourceforge.net/htmldoc/syntax.html)
 
-汉字乱码
-in vimrc: set fileencodings=utf-8,gbk,ucs-bom,cp936
-Normal Mode
+## 汉字乱码 in .vimrc:
+```
+set fileencodings=utf-8,gbk,ucs-bom,cp936
+```
 
-Range + Motion
+## count words "n"
+```
+:%s///n
+:%s/pattern//n
+g + <Ctr+g>
+```
 
-Line(double characters) -- to line end (capital) -- char:    
-substitute s -- S
-insert front i -- I
-append a -- A
-change c -- cc -- C(c$)
-replace r -- R
-delete d -- dd (include \n) -- D(not including \n)
-copy y -- Y(yy)
-case gU -- gUU g~ -- g~~
-re-do u -- U
+# Normal Mode
+
+## Range + Motion
+
+Range | letter | line | cursors to end
+Command | lower | upper |  
+--------- |---------------| -------------------- | ----
+insert front | i | I
+insert back | a | A
+substitute |  s  | S | 
+change | c | cc | C == c$
+re-do | u | U |
+replace | r | | R
+delete | | dd | D
+copy | | Y == yy | 
+upper case | gU | gUU | 
+lower case | gu | guu |
+change case | g~ | g~~ |
 
 
-character -- word -- sentence -- paragraph
-c -- w -- s -- p
 
-forward -- backward
-insert character a -- i
-line o -- O
-search f -- F  before t -- T
-follow  ; -- ,
-paste p -- P
-delete x -- X one charactor
-commandline search  / -- ?
+character | word | sentence | paragraph
+```
+c | w | s | p
+```
 
-within -- whole: i -- a    da) --  di)
+function | forward | backward
+```
+insert letter | a | i
+append line | o | O
+paste | p | P
+search in | f | F
+search  before | t | T
+follow | ; | ,
+delete char | x | X 
+command mode search | / | ?
+```
+
+within | whole
+```
+i | a
+da) |  di)
+```
 
 T9: Compose reusable changes
 delete a word: daw [best], dbx, bdw BECAUSE . command after is: daw, x, dw
@@ -627,4 +649,7 @@ link two split files
 
 
 
+
+# References
+* [Vim document](http://vimdoc.sourceforge.net/htmldoc/syntax.html)
 

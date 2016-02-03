@@ -39,10 +39,6 @@ change case | g~ | g~~ |
 
 
 
-character | word | sentence | paragraph
---------- |---------------| -------------------- | ----
-c | w | s | p
-
 function | forward | backward
 ---------------| -------------------- | ----
 insert letter | a | i
@@ -59,57 +55,72 @@ within | whole
 i | a
 da) |  di)
 
-T9: Compose reusable changes
-delete a word: daw [best], dbx, bdw BECAUSE . command after is: daw, x, dw
+# Compose reusable changes (T9)
+e.g. delete a word
+```
+(1) daw (2) dbx (3) bdw
+```
+(1) is the best BECAUSE. reusable commands after above is
+```
+(1) daw (2) x (3) dw
+```
 
-T11: Don’t Count If You Can Repeat        
+# Don’t Count You Can Repeat (T11)
 d7w is worse then dw...... but dw.... is worse then d5w
 
-np   取回最后第n次的删除(缓冲区中存有一定次数的删除内容，一般为9)
+# number + operation: e.g.
+```
+ np # paste for buffer n times.
+8@a # do operation in register "a" for 8 times.
+```
 
-ga      : display hex, ascii value of character under cursor
-g8      : display hex value of utf-8 character under cursor
-ggg?G   : rot13 whole file
-Cursor/Screen
+## Display character under cursor
+command | values
+--- | ---
+ga      | hex, ascii 
+g8      | hex value of utf-8 
+ggg?G   | rot13 whole file
 
-cursors
-    j -- n+         k -- n- latter at line start
-nG -- n$ start -- end
-H screen top,  nH line n below screen top
-M screen middle
-L screen bottom,  nL line n above screen bottom
-0 or | first column at current line, different from ^
-n|   move to column n
-[[ first line in file
-gj -- j display line -- real line g{} -- {}
-g; go forward    g, go backward            
-gd go to definition    gf go to the file (T57)
-T54 moving between {[()]}: %
 
-screen (cursor stays)
-z<Enter> or nz<Enter>  position current or nth line at top
-z.  or nz.   position current or nth line at middle
-z-  or nz-  position current or nth line at bottom
-full screen:  <C+f> <C+b>
-half screen: <C+u> <C+d>
+## Moving cursors
+* left down up right:  h j k l
+* go display line: gj gk
+* (line) start (unlike j k): n+ n- 
+* (line) start end: nG n$
+* (screen) top middle bottom: H M L
+* (n line) below top or above bottom: nH nL
+* first column (even space, different from ^) of line: 0 |
+* first line in file: [[ 
+* to column n: n|
+* (block) start end: { }
+* moving between {[()]} (T54): %
+* (change list) forward backeward: g; g,
+* (page) forward backward: <C+f> <C+b>
+* (half page) forward backward: <C+d> <C+u>
+* go to definition: gd
+* go to the file: gf
+* switch files between % and #: <C+^> 
 
-Marks & Jumps
+## moving screen with cursor stays
+* (page) top middle bottom: z<Enter> z. z-
+* ? top middle bottome: nz<Enter> nz. nz-
 
-T53 mark    :h mark-motions
-    m{a-zA-Z}: 'm line beginning; `m exact position
-    `` Position before the last jump within current file
-`. Location of last change
-`^ Location of last insertion
-`[ Start of last change or yank
-`] End of last change or yank
-`< Start of last visual selection
-`> End of last visual selection
+## Marks & Jumps (T53)
+```
+:h mark-motions
+:mark
+:jumps
+```
+* create mark: m{a-zA-Z}
+* go to mark line-beginning, exact position: 'm `m 
+* position before the last jump within current file: `` 
+* Location of last change: `.
+* (last change or yank) start end: `[ `]
+* (last visual selection) start end: `< `>
+* jump forward backward: <C+i> <C+o>
 
-:marks list marks; :jumps list jumps (T55)    
-<C-o> backward jump     <c-i> forward jump
 
-Buffers/Windows
-T36:
+## Buffers/Windows (T36)
 :ls -- list files in the buffer
 :bnext -- go to next file :bprevious :blast :bfirst
 :buffer N -- buffer {bufferName}
@@ -117,9 +128,8 @@ T36:
 :bdelete N1 N2 N3 -- :N, M bdelete -- 3,5 bdelete
 :bufdo -- execute command for each buffer
 :sbuffer N # open buffer N in horizontal window
-<C-^> -- switch files between % and #
 
-Change list
+## Change list
 T56: change list    :h changelist
 :changelist
 Arguments/Windows    
@@ -649,4 +659,5 @@ link two split files
 
 # References
 * [Vim document](http://vimdoc.sourceforge.net/htmldoc/syntax.html)
+* Practical VIM
 

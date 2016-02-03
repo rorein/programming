@@ -40,9 +40,11 @@ change case | g~ | g~~ |
 
 
 character | word | sentence | paragraph
+--------- |---------------| -------------------- | ----
 c | w | s | p
 
 function | forward | backward
+---------------| -------------------- | ----
 insert letter | a | i
 append line | o | O
 paste | p | P
@@ -53,6 +55,7 @@ delete char | x | X
 command mode search | / | ?
 
 within | whole
+--- | ---
 i | a
 da) |  di)
 

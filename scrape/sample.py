@@ -1,8 +1,8 @@
-# http://stackoverflow.com/questions/20039643/how-to-scrape-a-website-that-requires-login-first-with-python
-
+##################################### Method 1
 import mechanize
 import cookielib
 from bs4 import BeautifulSoup
+import html2text
 
 # Browser
 br = mechanize.Browser()
@@ -22,27 +22,20 @@ br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
 br.addheaders = [('User-agent', 'Chrome')]
 
 # The site we will navigate into, handling it's session
-# br.open('https://github.com/login')
-br.open(r'http://www.chase.com/')
+br.open('https://github.com/login')
 
-# View available forms; figure out the index of login form.
-i = 0
+# View available forms
 for f in br.forms():
-    print('------- Table (%d) -------' % i)
-    i = i + 1
-    print f
+    print(f)
 
-# Select login form (the index is 0).
-br.select_form(nr=0)
+# Select the second (index one) form (the first form is a search query box)
+br.select_form(nr=1)
 
-# User credential
-br.form['login'] = 'user_name'
-br.form['password'] = 'usr_password'
+# User credentials
+br.form['login'] = 'mylogin'
+br.form['password'] = 'mypass'
 
 # Login
 br.submit()
 
 print(br.open('https://github.com/settings/emails').read())
-
-
-
